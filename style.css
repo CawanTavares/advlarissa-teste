@@ -1,0 +1,410 @@
+/* Importação de fontes */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* Estilos Gerais */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navbar */
+#navbar {
+  background-color: rgba(30, 34, 38, 0.9); /* Fundo da navbar com opacidade */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+#navbar.scrolled {
+  background-color: rgba(30, 34, 38, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo da Navbar */
+.navbar-brand img {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.1);
+}
+
+/* Links da Navbar */
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: #fff;
+  position: relative; /* Necessário para o efeito ::after */
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Barra de seleção deslizante */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px; /* Altura da barra */
+  background-color: #fff; /* Cor da barra branca */
+  transition: width 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Expande a barra ao passar o mouse */
+  transform: translateX(0); /* A barra desliza para o lado */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #navbar {
+    padding: 10px 0;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .navbar-brand img {
+    height: 45px;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: url("./assets/img/divorcio.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(30, 34, 38, 0.7);
+}
+
+.hero-section .container {
+  padding-top: 45px;
+  position: relative;
+  z-index: 2;
+}
+
+.specialist-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.specialty-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.description {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #ff6b00;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #e65a00;
+}
+
+/* About Section */
+.about-section {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.btn-secondary {
+  background-color: #252627;
+  color: #fff;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #2e353b;
+}
+
+/* Services Section */
+.services-section {
+  background-color: #1e2226;
+  padding: 60px 0;
+}
+
+.services-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card {
+  background-color: #ffffff;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h5 {
+  color: #000000;
+  margin-top: 1rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #000000;
+  text-align: left;
+}
+
+.card img {
+  max-width: 80px;
+}
+
+@media (max-width: 767px) {
+  .card-text {
+    text-align: center;
+  }
+}
+
+/* Process Section Specific Styling */
+#process-section {
+  background-color: #eeeeee;
+  color: #fff;
+}
+
+#process-section .process-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+#process-section .process-description {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+#process-section .process-item {
+  background-color: #2e353b;
+  padding: 30px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#process-section .process-item:hover {
+  transform: translateY(-10px);
+  background-color: #353a40;
+}
+
+#process-section .process-step-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e6b800;
+  margin-bottom: 0.75rem;
+}
+
+#process-section .process-step-description {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  #process-section .process-title {
+    font-size: 2rem;
+  }
+
+  #process-section .process-step-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #1e2226;
+  padding: 60px 0;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: #ebebeb;
+}
+
+.contact-form-wrapper {
+  background-color: #ffffff; /* Fundo branco do container do formulário */
+  padding: 40px;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo dos campos de formulário */
+.form-control {
+  background-color: #f9f9f9; /* Fundo claro para os inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #333; /* Cor do texto */
+}
+
+.form-control::placeholder {
+  color: #ccc;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #1e2226;
+}
+
+/* Botão */
+.btn-primary {
+  background-color: #b28a47;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #a9802e;
+  transform: translateY(-2px); /* Leve efeito de hover */
+}
+
+/* Mensagem de erro */
+.text-danger {
+  font-size: 0.9rem;
+  color: #e74c3c;
+  margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: 20px;
+  }
+
+  .btn-primary {
+    width: 100%; /* Botão ocupa 100% da largura em telas menores */
+  }
+}
+/* Footer */
+.footer-section {
+  background-color: #22262b;
+  padding: 20px 0;
+  color: #ffffff; /* Cor de texto padrão no rodapé */
+  text-align: center;
+}
+
+.footer-section p {
+  margin: 0;
+  color: #cccccc; /* Cor clara para os parágrafos */
+}
+
+.footer-section a {
+  color: #e6b800; /* Cor de links no rodapé */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ffffff; /* Links ficam brancos no hover */
+}
+
+.footer-section .small {
+  font-size: 0.8rem;
+  color: #ffffff !important; /* Usa !important para garantir a cor branca */
+  opacity: 0.7; /* Leve transparência para visual mais suave */
+  display: block; /* Garante que o texto ocupe toda a linha */
+  margin-top: 10px;
+}
+/* Scroll Effects */
+#navbar.scrolled {
+  background-color: rgba(30, 34, 38, 0.8);
+}
+
+#navbar .nav-link {
+  color: #fff;
+}
+
+#navbar.scrolled .nav-link {
+  color: #ddd;
+}
+
+#navbar .navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+#navbar.scrolled .navbar-brand img {
+  transform: scale(0.9);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-section .specialty-title {
+    font-size: 2rem;
+  }
+  .about-section .about-title {
+    font-size: 1.75rem;
+  }
+  .services-section h2 {
+    font-size: 1.75rem;
+  }
+  .process-section h2 {
+    font-size: 1.75rem;
+  }
+  .contact-section h2 {
+    font-size: 1.75rem;
+  }
+}
