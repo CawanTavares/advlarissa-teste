@@ -30,7 +30,8 @@ img {
 
 /* Logo da Navbar */
 .navbar-brand img {
-  height: 50px;
+  height: 75px;
+  width: 230px;
   transition: transform 0.3s ease;
 }
 
@@ -79,7 +80,7 @@ img {
   }
 
   .navbar-brand img {
-    height: 45px;
+    height: 55px;
   }
 }
 
