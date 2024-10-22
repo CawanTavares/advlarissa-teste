@@ -1,6 +1,6 @@
 // Initialize EmailJS
 (function () {
-  emailjs.init("Mf7MxPwBkS2gzIPKZ");
+  emailjs.init("u2frpKxeogc1Xvm4m");
 })();
 
 // Scroll smooth for anchor links
@@ -69,7 +69,7 @@ document
     };
 
     // Send email
-    emailjs.send("service_se9517z", "template_mmr0m8i", templateParams).then(
+    emailjs.send("service_qwqf8ls", "template_5vikpmf", templateParams).then(
       function (response) {
         showModal("E-mail enviado com sucesso!", true);
         document.getElementById("contactForm").reset();
